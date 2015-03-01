@@ -1,0 +1,10 @@
+.container
+  .page-header
+    %h1 Welcome
+  .well
+    -if current_user
+      ='Logged in as: ' + current_user.email
+      =link_to 'Sign Out', sign_out_path, class: 'btn btn-danger'
+    -else
+      =link_to 'Sign Up', sign_up_path, class: 'btn btn-default'
+      =link_to 'Sign In', sign_in_path, class: 'btn btn-primary'
